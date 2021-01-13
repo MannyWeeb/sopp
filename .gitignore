@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+
+pyvenv.cfg
+
+/Include
+/Scripts
+/Lib
+
+src/data/*
