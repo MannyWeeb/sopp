@@ -85,7 +85,7 @@ def main(args):
         print("[FATAL] {}.py doesn't seem to have a \"form\" attribute".format(args[0]))
     except ModuleNotFoundError as e:
         print("[FATAL] {}.py was found on /src".format(e.args[0]))
-    except:
+    except Exception as e:
         print("[FATAL] unknown error while initializing parser.")
         
 def __parse_args__(args):
