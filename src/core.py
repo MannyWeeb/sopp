@@ -23,7 +23,7 @@ class Parser:
                     attrs["id"] = t.replace("#" , "")
                 
                 elif t.startswith("."):
-                    attrs["class"].insert(t.replace("." , ""))
+                    attrs["class"].append(t.replace("." , ""))
                 elif t[0].isalnum():
                     tag = t
 
@@ -51,7 +51,12 @@ class Parser:
 
         if tt == dict:
             for field in fields:
-                output[field] = self.__parse__(doc , self.__field_util__(fields[field]))
+                content = self.__parse__(doc , self.__field_util__(fields[field]))
+                temp = []
+                for t in content:
+                    temp.append(" ".join(t.split()))
+
+                output[field] = temp
                 
         elif callable(fields):
             return fields(doc) or ""

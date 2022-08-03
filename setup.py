@@ -7,7 +7,7 @@ setup(
     py_modules = [],
     package_dir = {"" : "src"},
     install_requires = [
-        "beautifulsoup ~= 4.9.1",
+        "beautifulsoup4 ~= 4.10.0",
         "requests ~= 2.25.1"
     ]#External Dependencies
 )
